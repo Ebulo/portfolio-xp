@@ -168,7 +168,8 @@ document.querySelector(".note-pad").ondblclick = function () {
 
 document.querySelector("textarea").value = localStorage.getItem("txtFileData")
   ? localStorage.getItem("txtFileData")
-  : "Hello World!\n\nHow about you type something.\n\nAuto Save is enabled";
+  : "Hey There Greetings, \n\nI Welcome you to my portfolio, here you can find details and links to my work and network. Hope you like it. \n\nMy Documents - My Portfolio \nMy Resume - Resume \nMy Computer - Github \nMy Network - Linkedin \n\n\nHow about you type something. \nAuto Save is enabled.";
+// : "Hello World!\n\nHow about you type something.\n\nAuto Save is enabled";
 
 function saveTextFile() {
   let value = document.querySelector("textarea").value;
