@@ -16,6 +16,39 @@ time.setAttribute(
   }).format(new Date())
 );
 
+const isMob = {
+  Android: function () {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function () {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function () {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function () {
+    return (
+      navigator.userAgent.match(/IEMobile/i) ||
+      navigator.userAgent.match(/WPDesktop/i)
+    );
+  },
+  any: function () {
+    return (
+      isMob.Android() ||
+      isMob.BlackBerry() ||
+      isMob.iOS() ||
+      isMob.Opera() ||
+      isMob.Windows()
+    );
+  },
+};
+
+// if (isMob.any()) alert("Mobile");
+// Mobile Check End
+
 document.addEventListener("contextmenu", (event) => {
   event.preventDefault();
   let right_click = document.getElementById("right-click");
@@ -168,7 +201,7 @@ document.querySelector(".note-pad").ondblclick = function () {
 
 document.querySelector("textarea").value = localStorage.getItem("txtFileData")
   ? localStorage.getItem("txtFileData")
-  : "Hey There Greetings, \n\nI Welcome you to my portfolio, here you can find details and links to my work and network. Hope you like it. \n\nMy Documents - My Portfolio \nMy Resume - Resume \nMy Computer - Github \nMy Network - Linkedin \n\n\nHow about you type something. \nAuto Save is enabled.";
+  : "Hey There Greetings, \n\nI Welcome you to my portfolio, here you can find details and links to my work and network. Hope you like it.\n\nNote: Please Double Click on Applications to Open. \n\nMy Documents - My Portfolio \nMy Resume - Resume \nMy Computer - Github \nMy Network - Linkedin \n\n\nHow about you type something. \nAuto Save is enabled.";
 // : "Hello World!\n\nHow about you type something.\n\nAuto Save is enabled";
 
 function saveTextFile() {
